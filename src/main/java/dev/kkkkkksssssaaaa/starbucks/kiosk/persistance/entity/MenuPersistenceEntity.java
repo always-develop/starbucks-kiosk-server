@@ -12,10 +12,12 @@ import lombok.Getter;
 @Table(name = "menu")
 public class MenuPersistenceEntity extends BaseEntity {
 
+    @Enumerated(EnumType.STRING)
+    private MenuType type;
+
     private String name;
 
     private int price;
 
-    @Enumerated(EnumType.STRING)
-    private MenuType type;
+    private String image;
 }

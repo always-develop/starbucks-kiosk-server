@@ -1,7 +1,9 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.data.MenuType;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menu;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menus;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.response.MenuResponse;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.response.MenuResponseFactory;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.service.RetrieveMenusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,10 +29,12 @@ public class MenuController {
     }
 
     @GetMapping("/{type}")
-    public ResponseEntity<List<Menu>> getMenus(
+    public ResponseEntity<List<MenuResponse>> getMenus(
         @PathVariable("type") MenuType type
     ) {
+        Menus menus = retrieveAllMenu.byType(type);
+
         return ResponseEntity.status(HttpStatus.OK)
-            .body(retrieveAllMenu.byType(type).getMenus());
+            .body(MenuResponseFactory.castMenus(menus));
     }
 }

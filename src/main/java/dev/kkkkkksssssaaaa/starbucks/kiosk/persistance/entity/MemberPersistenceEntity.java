@@ -12,7 +12,7 @@ public class MemberPersistenceEntity extends BaseEntity {
 
     @Column(
         unique = true,
-        length = 20,
+        length = 13,
         nullable = false,
         updatable = false
     )

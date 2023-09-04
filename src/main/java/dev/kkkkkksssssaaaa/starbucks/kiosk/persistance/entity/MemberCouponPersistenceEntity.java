@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @Table(name = "member_coupon")
-public class CouponPersistenceEntity extends BaseEntity {
+public class MemberCouponPersistenceEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")

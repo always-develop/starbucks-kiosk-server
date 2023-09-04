@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StarbucksKioskServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="kiosk.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="dev.kkkkkksssssaaaa.starbucks.kiosk.StarbucksKioskServerApplication" />
+    <option name="VM_PARAMETERS" value="-Dh2.bindAddress=127.0.0.1" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

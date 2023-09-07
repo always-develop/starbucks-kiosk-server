@@ -1,6 +1,6 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.common.Dates;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.common.util.Dates;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

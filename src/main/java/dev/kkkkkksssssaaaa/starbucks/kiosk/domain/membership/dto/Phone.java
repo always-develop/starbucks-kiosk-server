@@ -1,8 +1,5 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
 
-import org.springframework.validation.annotation.Validated;
-
-@Validated
 public class Phone {
 
     private final String phone;

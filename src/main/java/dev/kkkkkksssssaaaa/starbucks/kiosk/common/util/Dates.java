@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.common;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.common.util;
 
 import java.time.LocalDateTime;
 

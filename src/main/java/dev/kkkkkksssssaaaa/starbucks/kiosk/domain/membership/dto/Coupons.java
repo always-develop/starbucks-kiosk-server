@@ -22,6 +22,10 @@ public class Coupons {
         );
     }
 
+    public static Coupons empty() {
+        return new Coupons(new ArrayList<>());
+    }
+
     public List<Coupon> toList() {
         return new ArrayList<>(coupons);
     }

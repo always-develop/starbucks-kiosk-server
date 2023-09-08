@@ -21,4 +21,8 @@ public class Membership {
             Coupons.castEntities(membershipEntity.getCoupon())
         );
     }
+
+    public static Membership registeredNew(Phone phone) {
+        return new Membership(phone, 0, Coupons.empty());
+    }
 }

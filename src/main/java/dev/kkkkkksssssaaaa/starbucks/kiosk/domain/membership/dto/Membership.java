@@ -1,10 +1,6 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberCouponPersistenceEntity;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberPersistenceEntity;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberStampPersistenceEntity;
-
-import java.util.List;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.dao.MembershipDao;
 
 public class Membership {
 
@@ -18,15 +14,11 @@ public class Membership {
         this.coupons = coupons;
     }
 
-    public static Membership of(
-        MemberPersistenceEntity memberEntity,
-        List<MemberStampPersistenceEntity> stampEntities,
-        List<MemberCouponPersistenceEntity> couponEntities
-    ) {
+    public static Membership of(MembershipDao membershipEntity) {
         return new Membership(
-            Phone.of(memberEntity.getPhone()),
-            stampEntities.size(),
-            Coupons.castEntities(couponEntities)
+            Phone.of(membershipEntity.getMember().getPhone()),
+            membershipEntity.getStamp().size(),
+            Coupons.castEntities(membershipEntity.getCoupon())
         );
     }
 }

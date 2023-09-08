@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MemberPersistenceRepository
-    extends JpaRepository<MemberPersistenceEntity, Long>, MembershipCustomRepository{
+    extends JpaRepository<MemberPersistenceEntity, Long>, MembershipCustomRepository {
 }

@@ -22,7 +22,11 @@ public class Membership {
         return new Membership(
             membershipEntity.getMember().getId(),
             Phone.of(membershipEntity.getMember().getPhone()),
-            membershipEntity.getStamp().size(),
+            membershipEntity.getStamp()
+                .stream()
+                .filter(stamp -> !stamp.isUsed())
+                .toList()
+                .size(),
             Coupons.castEntities(membershipEntity.getCoupon())
         );
     }

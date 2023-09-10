@@ -24,9 +24,9 @@ public class MembershipResponse {
             membership.getId(),
             membership.getStampCount(),
             membership.getCoupons()
+                .availableCoupons()
                 .toList()
                 .stream()
-                .filter(coupon -> !coupon.isUse())
                 .map(CouponResponse::castDto)
                 .collect(Collectors.toList())
         );

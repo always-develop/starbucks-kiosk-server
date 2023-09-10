@@ -22,18 +22,16 @@ public class MemberCouponPersistenceEntity extends BaseEntity {
     private MemberPersistenceEntity member;
 
     @Column(
-        name = "used",
-        columnDefinition = "BIT",
-        nullable = false
-    )
-    @ColumnDefault("0")
-    private boolean used = false;
-
-    @Column(
         name = "expired_at",
         columnDefinition = "DATETIME",
         nullable = false
     )
     @ColumnDefault("CURRENT_TIMESTAMP")
     private LocalDateTime expiredAt = Dates.aWeekLater();
+
+    @Column(
+        name = "used_at",
+        columnDefinition = "DATETIME"
+    )
+    private LocalDateTime usedAt;
 }

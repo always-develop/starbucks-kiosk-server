@@ -4,6 +4,7 @@ import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberCouponPersis
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Coupons {
@@ -14,7 +15,7 @@ public class Coupons {
         this.coupons = coupons;
     }
 
-    public static Coupons castEntities(List<MemberCouponPersistenceEntity> entities) {
+    public static Coupons castEntities(Set<MemberCouponPersistenceEntity> entities) {
         return new Coupons(
             entities.stream()
                 .map(Coupon::castEntity)

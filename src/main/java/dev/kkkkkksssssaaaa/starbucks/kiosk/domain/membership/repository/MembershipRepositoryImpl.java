@@ -23,9 +23,10 @@ public class MembershipRepositoryImpl implements MembershipRepository {
 
     @Override
     public Membership save(Phone phone) {
-        memberPersistenceRepository.save(new MemberPersistenceEntity(phone.toString()));
+        MemberPersistenceEntity newEntity =
+            memberPersistenceRepository.saveAndFlush(new MemberPersistenceEntity(phone.toString()));
 
-        return Membership.registeredNew(phone);
+        return Membership.registeredNew(newEntity);
     }
 
     @Override

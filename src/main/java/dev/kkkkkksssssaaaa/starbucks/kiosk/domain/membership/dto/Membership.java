@@ -1,6 +1,7 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.dao.MembershipDao;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberPersistenceEntity;
 import lombok.Getter;
 
 @Getter
@@ -31,7 +32,12 @@ public class Membership {
         );
     }
 
-    public static Membership registeredNew(Phone phone) {
-        return new Membership(null, phone, 0, Coupons.empty());
+    public static Membership registeredNew(MemberPersistenceEntity memberEntity) {
+        return new Membership(
+            memberEntity.getId(),
+            Phone.of(memberEntity.getPhone()),
+            0,
+            Coupons.empty()
+        );
     }
 }

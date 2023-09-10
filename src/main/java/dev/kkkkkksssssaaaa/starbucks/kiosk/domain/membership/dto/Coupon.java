@@ -31,7 +31,7 @@ public class Coupon {
     }
 
     public boolean isUse() {
-        return expiredAt.isAfter(LocalDateTime.now())
+        return expiredAt.isBefore(LocalDateTime.now())
             || Optional.ofNullable(usedAt).isPresent();
     }
 }

@@ -6,20 +6,20 @@ import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberPersistenceE
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberStampPersistenceEntity;
 import lombok.Getter;
 
-import java.util.List;
+import java.util.Set;
 
 @Getter
 public class MembershipDao {
 
     private final MemberPersistenceEntity member;
-    private final List<MemberStampPersistenceEntity> stamp;
-    private final List<MemberCouponPersistenceEntity> coupon;
+    private final Set<MemberStampPersistenceEntity> stamp;
+    private final Set<MemberCouponPersistenceEntity> coupon;
 
     @QueryProjection
     public MembershipDao(
         MemberPersistenceEntity member,
-        List<MemberStampPersistenceEntity> stamp,
-        List<MemberCouponPersistenceEntity> coupon
+        Set<MemberStampPersistenceEntity> stamp,
+        Set<MemberCouponPersistenceEntity> coupon
     ) {
         this.member = member;
         this.stamp = stamp;

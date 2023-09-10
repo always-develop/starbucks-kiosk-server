@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import static com.querydsl.core.group.GroupBy.groupBy;
-import static com.querydsl.core.group.GroupBy.list;
+import static com.querydsl.core.group.GroupBy.set;
 
 @Repository
 @Transactional(readOnly = true)
@@ -41,8 +41,8 @@ public class MembershipCustomRepositoryImpl implements MembershipCustomRepositor
                     .as(
                         new QMembershipDao(
                             QMemberPersistenceEntity.memberPersistenceEntity,
-                            list(QMemberStampPersistenceEntity.memberStampPersistenceEntity),
-                            list(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
+                            set(QMemberStampPersistenceEntity.memberStampPersistenceEntity),
+                            set(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
                         )
                     )
             );

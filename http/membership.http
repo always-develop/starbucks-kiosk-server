@@ -1,0 +1,2 @@
+### [GET] 멤버십 조회
+GET http://localhost:8080/memberships?phone=010-1234-1239

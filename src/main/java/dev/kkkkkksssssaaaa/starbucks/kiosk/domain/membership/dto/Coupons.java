@@ -27,6 +27,15 @@ public class Coupons {
         return new Coupons(new ArrayList<>());
     }
 
+    public Coupons availableCoupons() {
+        return new Coupons(
+            this.coupons
+                .stream()
+                .filter(coupon -> !coupon.isUse())
+                .collect(Collectors.toList())
+        );
+    }
+
     public List<Coupon> toList() {
         return new ArrayList<>(coupons);
     }

@@ -2,6 +2,8 @@ package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
 
 public class Phone {
 
+    private static final String HYPHEN = "-";
+    private static final int LAST_NUMBER_INDEX = 2;
     private final String phone;
 
     private Phone(String phone) {
@@ -12,6 +14,10 @@ public class Phone {
         PhoneValidator.validate(stringOfPhone);
 
         return new Phone(stringOfPhone);
+    }
+
+    public String lastNumber() {
+        return phone.split(HYPHEN)[LAST_NUMBER_INDEX];
     }
 
     @Override

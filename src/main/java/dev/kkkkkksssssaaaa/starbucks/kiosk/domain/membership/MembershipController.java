@@ -22,8 +22,8 @@ public class MembershipController {
     }
 
     @GetMapping
-    public ResponseEntity<MembershipResponse> findMembership(String phone) {
-        Membership membership = getMembershipOrRegistered.getMembershipOrRegistered(Phone.of(phone));
+    public ResponseEntity<MembershipResponse> findMembership(Phone phone) {
+        Membership membership = getMembershipOrRegistered.getMembershipOrRegistered(phone);
 
         return ResponseEntity.ok(MembershipResponse.castDto(membership));
     }

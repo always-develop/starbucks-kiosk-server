@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.entity;
 
 public class Payment {
 

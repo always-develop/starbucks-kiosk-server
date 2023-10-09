@@ -1,7 +1,7 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.service;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Membership;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Phone;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Membership;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Phone;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.MembershipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

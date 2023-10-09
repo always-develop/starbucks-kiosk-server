@@ -1,6 +1,6 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.response;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Membership;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Membership;
 import lombok.Getter;
 
 import java.util.List;

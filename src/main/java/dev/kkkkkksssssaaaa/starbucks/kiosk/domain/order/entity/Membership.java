@@ -1,6 +1,6 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.order.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.order.entity;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Phone;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Phone;
 import lombok.Getter;
 
 import java.util.Optional;

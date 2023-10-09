@@ -1,6 +1,6 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.response;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Coupon;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Coupon;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

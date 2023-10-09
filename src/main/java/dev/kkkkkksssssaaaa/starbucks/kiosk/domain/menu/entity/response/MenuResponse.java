@@ -1,6 +1,6 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.response;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menu;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.Menu;
 import lombok.Getter;
 
 @Getter

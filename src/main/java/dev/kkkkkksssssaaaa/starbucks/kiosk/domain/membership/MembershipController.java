@@ -1,8 +1,8 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Membership;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.Phone;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto.response.MembershipResponse;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Membership;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Phone;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.response.MembershipResponse;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.service.GetMembershipOrRegisteredService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

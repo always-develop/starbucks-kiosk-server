@@ -1,6 +1,6 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.response;
 
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menus;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.Menus;
 
 import java.util.List;
 import java.util.stream.Collectors;

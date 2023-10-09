@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity;
 
 import org.junit.jupiter.api.Test;
 

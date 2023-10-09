@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberCouponPersistenceEntity;
 import lombok.Getter;

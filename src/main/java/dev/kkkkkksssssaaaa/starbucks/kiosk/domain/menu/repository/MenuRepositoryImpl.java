@@ -1,7 +1,7 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.repository;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.data.MenuType;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menus;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.Menus;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.repository.MenuPersistenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

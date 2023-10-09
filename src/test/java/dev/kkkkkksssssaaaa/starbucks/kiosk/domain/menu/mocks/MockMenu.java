@@ -1,7 +1,7 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.mocks;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.data.MenuType;
-import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto.Menus;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.Menus;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MenuPersistenceEntity;
 import org.mockito.Mockito;
 

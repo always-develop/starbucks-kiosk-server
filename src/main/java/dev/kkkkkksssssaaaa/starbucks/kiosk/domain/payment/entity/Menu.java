@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.entity;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MenuPersistenceEntity;
 

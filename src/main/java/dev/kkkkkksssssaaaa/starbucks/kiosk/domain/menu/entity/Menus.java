@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MenuPersistenceEntity;
 

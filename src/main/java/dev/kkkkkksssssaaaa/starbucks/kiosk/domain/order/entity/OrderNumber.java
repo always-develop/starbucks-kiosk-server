@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.order.dto;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.order.entity;
 
 public class OrderNumber {
 

@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.menu.entity.Menus;
 

@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.response;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Coupon;
 import lombok.Getter;

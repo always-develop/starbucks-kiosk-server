@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.data;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

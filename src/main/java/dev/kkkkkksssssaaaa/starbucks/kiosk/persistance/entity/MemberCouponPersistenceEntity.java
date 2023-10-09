@@ -34,4 +34,10 @@ public class MemberCouponPersistenceEntity extends BaseEntity {
         columnDefinition = "DATETIME"
     )
     private LocalDateTime usedAt;
+
+    @Column(
+        name = "discount_price",
+        columnDefinition = "INT"
+    )
+    private Integer discountPrice;
 }

@@ -2,7 +2,6 @@ package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.entity;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MenuPersistenceEntity;
 import lombok.Getter;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +18,14 @@ public class OrderList {
         return new OrderList(
             entities.stream()
                 .map(Menu::castEntity)
+                .collect(Collectors.toList())
+        );
+    }
+
+    public static OrderList of(List<Long> ids) {
+        return new OrderList(
+            ids.stream()
+                .map(Menu::of)
                 .collect(Collectors.toList())
         );
     }

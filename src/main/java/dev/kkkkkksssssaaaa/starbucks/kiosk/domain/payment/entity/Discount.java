@@ -22,4 +22,12 @@ public class Discount {
                 .collect(Collectors.toList())
         );
     }
+
+    public static Discount of(List<Long> ids) {
+        return new Discount(
+            ids.stream()
+                .map(Coupon::of)
+                .collect(Collectors.toList())
+        );
+    }
 }

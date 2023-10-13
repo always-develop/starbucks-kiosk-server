@@ -18,4 +18,8 @@ public class Menu {
             Price.of(entity.getPrice())
         );
     }
+
+    public static Menu of(long id) {
+        return new Menu(id, Price.of(0));
+    }
 }

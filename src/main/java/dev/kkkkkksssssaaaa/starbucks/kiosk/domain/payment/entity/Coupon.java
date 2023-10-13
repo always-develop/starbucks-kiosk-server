@@ -20,4 +20,11 @@ public class Coupon {
             Price.of(entity.getDiscountPrice())
         );
     }
+
+    public static Coupon of(long id) {
+        return new Coupon(
+            id,
+            Price.of(0)
+        );
+    }
 }

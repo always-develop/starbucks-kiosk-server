@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "order")
+@Table(name = "order_history")
 @NoArgsConstructor
 public class OrderPersistenceEntity extends BaseEntity {
 

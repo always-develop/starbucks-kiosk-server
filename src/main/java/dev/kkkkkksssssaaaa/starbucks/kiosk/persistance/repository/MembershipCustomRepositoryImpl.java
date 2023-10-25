@@ -16,7 +16,7 @@ import java.util.Optional;
 import static com.querydsl.core.group.GroupBy.groupBy;
 import static com.querydsl.core.group.GroupBy.set;
 
-@Repository
+@Repository("memberPersistenceCustomRepository")
 @Transactional(readOnly = true)
 public class MembershipCustomRepositoryImpl implements MembershipCustomRepository {
 

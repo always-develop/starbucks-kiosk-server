@@ -9,12 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository("paymentsDomainMembershipRepository")
 @Transactional(readOnly = true)
-public class MembershipCustomRepositoryImpl implements MembershipRepository {
+public class MembershipRepositoryImpl implements MembershipRepository {
 
     private final MemberPersistenceRepository persistenceRepository;
 
     @Autowired
-    public MembershipCustomRepositoryImpl(
+    public MembershipRepositoryImpl(
         @Qualifier("memberPersistenceRepository")
         MemberPersistenceRepository persistenceRepository
     ) {

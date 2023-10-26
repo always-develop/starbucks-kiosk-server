@@ -3,6 +3,7 @@ package dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.repository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.dao.MembershipDao;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.dao.QMembershipDao;
+import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberPersistenceEntity;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.QMemberCouponPersistenceEntity;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.QMemberPersistenceEntity;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.QMemberStampPersistenceEntity;
@@ -48,6 +49,14 @@ public class MembershipCustomRepositoryImpl implements MembershipCustomRepositor
             );
 
         return Optional.ofNullable(result.get(phone));
+    }
+
+    @Override
+    public MemberPersistenceEntity get(String phone) {
+        return queryFactory
+            .selectFrom(QMemberPersistenceEntity.memberPersistenceEntity)
+            .where(QMemberPersistenceEntity.memberPersistenceEntity.phone.eq(phone))
+            .fetchFirst();
     }
 }
 

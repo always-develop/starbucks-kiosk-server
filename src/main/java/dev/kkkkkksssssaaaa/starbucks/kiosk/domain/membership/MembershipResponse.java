@@ -1,23 +1,16 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.entity.Membership;
-import lombok.Getter;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
-public class MembershipResponse {
-
-    private final long id;
-    private final int stampCount;
-    private final List<CouponResponse> coupons;
-
-    private MembershipResponse(long id, int stampCount, List<CouponResponse> coupons) {
-        this.id = id;
-        this.stampCount = stampCount;
-        this.coupons = coupons;
-    }
+public record MembershipResponse(
+    @JsonProperty("id") long id,
+    @JsonProperty("stampCount") int stampCount,
+    @JsonProperty("coupons") List<CouponResponse> coupons
+) {
 
     public static MembershipResponse castDto(Membership membership) {
         return new MembershipResponse(

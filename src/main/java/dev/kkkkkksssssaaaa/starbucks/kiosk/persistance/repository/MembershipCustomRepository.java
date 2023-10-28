@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface MembershipCustomRepository {
 
     Optional<MembershipDao> findMembership(String phone);
-    MemberPersistenceEntity get(String phone);
+    MembershipDao get(String phone);
 }

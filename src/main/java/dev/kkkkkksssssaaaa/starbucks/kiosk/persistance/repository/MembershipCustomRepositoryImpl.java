@@ -52,11 +52,27 @@ public class MembershipCustomRepositoryImpl implements MembershipCustomRepositor
     }
 
     @Override
-    public MemberPersistenceEntity get(String phone) {
-        return queryFactory
-            .selectFrom(QMemberPersistenceEntity.memberPersistenceEntity)
+    public MembershipDao get(String phone) {
+        Map<String, MembershipDao> result = queryFactory
+            .from(QMemberPersistenceEntity.memberPersistenceEntity)
             .where(QMemberPersistenceEntity.memberPersistenceEntity.phone.eq(phone))
-            .fetchFirst();
+            .leftJoin(QMemberStampPersistenceEntity.memberStampPersistenceEntity)
+            .on(QMemberStampPersistenceEntity.memberStampPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
+            .leftJoin(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
+            .on(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
+            .transform(
+                groupBy(QMemberPersistenceEntity.memberPersistenceEntity.phone)
+                    .as(
+                        new QMembershipDao(
+                            QMemberPersistenceEntity.memberPersistenceEntity,
+                            set(QMemberStampPersistenceEntity.memberStampPersistenceEntity),
+                            set(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
+                        )
+                    )
+            );
+
+        return Optional.ofNullable(result.get(phone))
+            .orElseThrow(IllegalStateException::new);
     }
 }
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository("menuPersistenceRepository")
 public interface MenuPersistenceRepository extends JpaRepository<MenuPersistenceEntity, Long> {
 
     List<MenuPersistenceEntity> findAllByType(MenuType type);

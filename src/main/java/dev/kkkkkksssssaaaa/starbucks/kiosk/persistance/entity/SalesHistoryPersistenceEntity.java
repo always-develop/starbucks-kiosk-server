@@ -1,5 +1,6 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -18,7 +19,8 @@ public class SalesHistoryPersistenceEntity extends BaseEntity {
 
     @ManyToOne(
         fetch = FetchType.LAZY,
-        optional = false
+        optional = false,
+        cascade = CascadeType.ALL
     )
     @JoinColumn(name = "order_id")
     private OrderPersistenceEntity order;

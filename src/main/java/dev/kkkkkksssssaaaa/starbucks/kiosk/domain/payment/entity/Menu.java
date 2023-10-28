@@ -1,7 +1,9 @@
 package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.payment.entity;
 
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MenuPersistenceEntity;
+import lombok.Getter;
 
+@Getter
 public class Menu {
 
     private final Long id;

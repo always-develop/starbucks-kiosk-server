@@ -31,6 +31,4 @@ public class SalesHistoryPersistenceEntity extends BaseEntity {
     )
     @JoinColumn(name = "menu_id")
     private MenuPersistenceEntity menu;
-
-    private int price;
 }

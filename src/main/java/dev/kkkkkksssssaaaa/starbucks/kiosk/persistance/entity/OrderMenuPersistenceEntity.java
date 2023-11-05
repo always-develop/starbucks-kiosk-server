@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
-@Table(name = "sales_history")
+@Table(name = "order_menu")
 @NoArgsConstructor
 @AllArgsConstructor
-public class SalesHistoryPersistenceEntity extends BaseEntity {
+public class OrderMenuPersistenceEntity extends BaseEntity {
 
     @ManyToOne(
         fetch = FetchType.LAZY,

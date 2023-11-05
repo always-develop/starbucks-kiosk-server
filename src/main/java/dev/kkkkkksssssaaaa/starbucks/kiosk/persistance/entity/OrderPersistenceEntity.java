@@ -30,4 +30,15 @@ public class OrderPersistenceEntity extends BaseEntity {
 
     @Column(name = "total_price")
     private Integer totalPrice;
+
+    public static OrderPersistenceEntity createAccepted(
+        MemberPersistenceEntity member,
+        Integer totalPrice
+    ) {
+        return new OrderPersistenceEntity(
+            member,
+            OrderStatus.ACCEPTED,
+            totalPrice
+        );
+    }
 }

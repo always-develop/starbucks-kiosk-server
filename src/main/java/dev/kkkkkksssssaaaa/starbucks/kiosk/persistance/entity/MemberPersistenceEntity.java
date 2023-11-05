@@ -21,4 +21,12 @@ public class MemberPersistenceEntity extends BaseEntity {
         updatable = false
     )
     private String phone;
+
+    private MemberPersistenceEntity(Long id) {
+        super(id);
+    }
+
+    public static MemberPersistenceEntity of(Long id) {
+        return new MemberPersistenceEntity(id);
+    }
 }

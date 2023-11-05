@@ -7,10 +7,12 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @Entity
 @Table(name = "menu")
+@NoArgsConstructor
 public class MenuPersistenceEntity extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
@@ -23,4 +25,12 @@ public class MenuPersistenceEntity extends BaseEntity {
     private int price;
 
     private String image;
+
+    private MenuPersistenceEntity(Long id) {
+        super(id);
+    }
+
+    public static MenuPersistenceEntity of(Long id) {
+        return new MenuPersistenceEntity(id);
+    }
 }

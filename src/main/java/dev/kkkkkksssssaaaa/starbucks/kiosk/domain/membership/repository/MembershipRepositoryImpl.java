@@ -31,7 +31,7 @@ public class MembershipRepositoryImpl implements MembershipRepository {
 
     @Override
     public Optional<Membership> findMembership(Phone phone) {
-        return memberPersistenceRepository.findMembership(phone.toString())
+        return memberPersistenceRepository.findByPhone(phone.toString())
             .map(Membership::of);
     }
 }

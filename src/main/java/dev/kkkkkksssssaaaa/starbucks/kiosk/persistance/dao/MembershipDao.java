@@ -1,4 +1,4 @@
-package dev.kkkkkksssssaaaa.starbucks.kiosk.domain.membership.repository.dao;
+package dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.dao;
 
 import com.querydsl.core.annotations.QueryProjection;
 import dev.kkkkkksssssaaaa.starbucks.kiosk.persistance.entity.MemberCouponPersistenceEntity;

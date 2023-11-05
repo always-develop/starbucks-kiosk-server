@@ -21,6 +21,13 @@ import static com.querydsl.core.group.GroupBy.set;
 @Transactional(readOnly = true)
 public class MembershipCustomRepositoryImpl implements MembershipCustomRepository {
 
+    private static final QMemberPersistenceEntity MEMBER =
+        QMemberPersistenceEntity.memberPersistenceEntity;
+    private static final QMemberStampPersistenceEntity STAMP =
+        QMemberStampPersistenceEntity.memberStampPersistenceEntity;
+    private static final QMemberCouponPersistenceEntity COUPON =
+        QMemberCouponPersistenceEntity.memberCouponPersistenceEntity;
+
     private final JPAQueryFactory queryFactory;
 
     @Autowired
@@ -29,47 +36,61 @@ public class MembershipCustomRepositoryImpl implements MembershipCustomRepositor
     }
 
     @Override
-    public Optional<MembershipDao> findMembership(String phone) {
-        Map<String, MembershipDao> result = queryFactory
-            .from(QMemberPersistenceEntity.memberPersistenceEntity)
-            .where(QMemberPersistenceEntity.memberPersistenceEntity.phone.eq(phone))
-            .leftJoin(QMemberStampPersistenceEntity.memberStampPersistenceEntity)
-            .on(QMemberStampPersistenceEntity.memberStampPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
-            .leftJoin(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
-            .on(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
-            .transform(
-                groupBy(QMemberPersistenceEntity.memberPersistenceEntity.phone)
-                    .as(
-                        new QMembershipDao(
-                            QMemberPersistenceEntity.memberPersistenceEntity,
-                            set(QMemberStampPersistenceEntity.memberStampPersistenceEntity),
-                            set(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
+    public Optional<MembershipDao> findByPhone(String phone) {
+        Map<String, MembershipDao> result =
+            queryFactory
+                .from(MEMBER)
+                .where(MEMBER.phone.eq(phone))
+                .leftJoin(STAMP)
+                .on(
+                    STAMP.member.id.eq(MEMBER.id)
+                        .and(STAMP.used.isFalse())
+                )
+                .leftJoin(COUPON)
+                .on(
+                    COUPON.member.id.eq(MEMBER.id)
+                        .and(COUPON.usedAt.isNull())
+                )
+                .transform(
+                    groupBy(MEMBER.phone)
+                        .as(
+                            new QMembershipDao(
+                                MEMBER,
+                                set(STAMP),
+                                set(COUPON)
+                            )
                         )
-                    )
-            );
+                );
 
         return Optional.ofNullable(result.get(phone));
     }
 
     @Override
     public MembershipDao get(String phone) {
-        Map<String, MembershipDao> result = queryFactory
-            .from(QMemberPersistenceEntity.memberPersistenceEntity)
-            .where(QMemberPersistenceEntity.memberPersistenceEntity.phone.eq(phone))
-            .leftJoin(QMemberStampPersistenceEntity.memberStampPersistenceEntity)
-            .on(QMemberStampPersistenceEntity.memberStampPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
-            .leftJoin(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
-            .on(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity.member.id.eq(QMemberPersistenceEntity.memberPersistenceEntity.id))
-            .transform(
-                groupBy(QMemberPersistenceEntity.memberPersistenceEntity.phone)
-                    .as(
-                        new QMembershipDao(
-                            QMemberPersistenceEntity.memberPersistenceEntity,
-                            set(QMemberStampPersistenceEntity.memberStampPersistenceEntity),
-                            set(QMemberCouponPersistenceEntity.memberCouponPersistenceEntity)
+        Map<String, MembershipDao> result =
+            queryFactory
+                .from(MEMBER)
+                .where(MEMBER.phone.eq(phone))
+                .leftJoin(STAMP)
+                .on(
+                    STAMP.member.id.eq(MEMBER.id)
+                        .and(STAMP.used.isFalse())
+                )
+                .leftJoin(COUPON)
+                .on(
+                    COUPON.member.id.eq(MEMBER.id)
+                        .and(COUPON.usedAt.isNull())
+                )
+                .transform(
+                    groupBy(MEMBER.phone)
+                        .as(
+                            new QMembershipDao(
+                                MEMBER,
+                                set(STAMP),
+                                set(COUPON)
+                            )
                         )
-                    )
-            );
+                );
 
         return Optional.ofNullable(result.get(phone))
             .orElseThrow(IllegalStateException::new);
